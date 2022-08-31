@@ -1,26 +1,17 @@
-name=["Sheikh","Muhtasim","Nasif"]
-print(name)
-print(name[0])
-print(len(name)) #length of array
+class Parents:
+    def __init__(self,papa,mamma):
+        self.firstname=papa
+        self.middlename=mamma
 
-for n in name:    #array looping
-    print(name)
+    def printname(self):
+            print(self.firstname, self.middlename)
+class Child(Parents):
+    def __init__(self,papa,mamma,baby):
+        super().__init__(papa,mamma)
+        self.lastname=baby
+    def Welcome(self):
+        print("Welcome Dear", self.firstname,self.middlename,self.lastname)
 
-name.append("Shitab") #adding an element
-print(name)
-
-name.pop(3) #remove a data using index number
-print(name)
-
-name.remove("Muhtasim")
-print(name)
-
-number=[20,60,33,48,96]
-print(number.count(20)) #specifing individual index
-number.reverse()
-print(number)
-number.sort()
-print(number)
-name.extend(number)  #Adding 2 array elements
-print(name)
+a=Child(input("Enter First name"),input("Enter Middle name"),input("Enter Last Name"))
+a.Welcome()
 
