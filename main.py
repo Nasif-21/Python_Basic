@@ -1,26 +1,41 @@
-name=["Sheikh","Muhtasim","Nasif"]
-print(name)
-print(name[0])
-print(len(name)) #length of array
+import re
+#Importing regular expression
 
-for n in name:    #array looping
-    print(name)
+word="I am not Fine"
+word2="I am much much fine"
+word3="Welcome to Python Compiler Design"
+word4="Iamsosad"
+a=re.search("^I",word)
+b=re.search("^The",word)
+c=re.search("^I.*Fine$",word)  #(^)Word starts with I and ends($) with Fine and ($) 0 occurance
+d=re.findall("m",word2) #Find all the M
+e=re.findall("good",word2) #If they found no match, return a blank
+f=re.search("to",word3) #Finding the position of the word to
+g=re.split("",word3) #Splitting every word
+h=re.sub(""," ",word4) #Substituting
+i=re.sub(""," ",word4,2) #Using Index
 
-name.append("Shitab") #adding an element
-print(name)
+if a:
+    print("Word found")
+else:
+    print("Not Found")
 
-name.pop(3) #remove a data using index number
-print(name)
+if b:
+    print("Word found")
+else:
+    print("Not Found")
 
-name.remove("Muhtasim")
-print(name)
+if c:
+    print("Word found")
+else:
+    print("Not Found")
 
-number=[20,60,33,48,96]
-print(number.count(20)) #specifing individual index
-number.reverse()
-print(number)
-number.sort()
-print(number)
-name.extend(number)  #Adding 2 array elements
-print(name)
-
+print(d)
+print(e)
+print("Position of the word to is in",f.start())
+print(g)
+print("Before Splitting")
+print(word4)
+print("After Splitting")
+print(h)
+print(i)
